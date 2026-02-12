@@ -37,15 +37,14 @@ llm = ChatGroq(
 
 ## Generation function
 def llm_generate(llm, prompt):
-  template = ChatPromptTemplate.from_messages([
-      ("system", "You are a digital marketing expert specialized in SEO and persuasive copywriting."),
-      ("human", "{prompt}"),
-  ])
+    template = ChatPromptTemplate.from_messages([
+        ("system", "You are a digital marketing expert specialized in SEO and persuasive copywriting."),
+        ("human", "{prompt}"),])
 
-  chain = template | llm | StrOutputParser()
+    chain = template | llm | StrOutputParser()
 
-  res = chain.invoke({"prompt": prompt})
-  return res
+    res = chain.invoke({"prompt": prompt})
+    return res
 
 st.set_page_config(page_title="Content Generator 🤖", page_icon="🤖")
 st.title("Content generator")
