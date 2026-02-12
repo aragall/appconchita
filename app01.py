@@ -12,7 +12,7 @@ load_dotenv()
 api_key = os.getenv("GROQ_API_KEY")
 
 # Inicializa el cliente
-client = Groq(api_key=api_key)
+client = ChatGroq(api_key=api_key)
 
 # Ejemplo de petición de chat
 completion = client.chat.completions.create(
